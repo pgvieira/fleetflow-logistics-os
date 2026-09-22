@@ -1,7 +1,7 @@
 {
 	"name": "fleetflow-logistics-os",
 	"private": true,
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
@@ -19,8 +19,10 @@
 		"**/*": "prettier --write --ignore-unknown"
 	},
 	"dependencies": {
+		"@tailwindcss/vite": "^4.3.3",
 		"react": "^19.2.8",
-		"react-dom": "^19.2.8"
+		"react-dom": "^19.2.8",
+		"tailwindcss": "^4.3.3"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.29.7",
