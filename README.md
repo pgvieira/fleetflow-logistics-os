@@ -2,6 +2,11 @@
 
 Monorepo pessoal para os projetos de frontend e backend.
 
+## Requisitos
+
+- Node.js `24.21.0` (versão registrada em `.nvmrc` e validada pelo npm).
+- npm incluído com essa versão do Node.js.
+
 ## Estrutura
 
 - `apps/api/`: API Node.js com Express e TypeScript.
