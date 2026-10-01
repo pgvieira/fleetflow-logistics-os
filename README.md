@@ -30,7 +30,7 @@ npm run check:pre-push
 npm run check
 ```
 
-`check:pre-push` executa typecheck, lint e testes; o hook do Husky roda esse comando antes de cada push. `check` também inclui build e audit. Os comandos de qualidade percorrem os workspaces que tenham o script correspondente; por enquanto, lint e testes estão configurados no frontend.
+`check:pre-push` executa typecheck, lint e testes; o hook do Husky roda esse comando antes de cada push. `check` também inclui build e audit. Typecheck, lint, testes e build estão configurados nos workspaces da API e do frontend.
 
 Instale as dependências a partir da raiz:
 
