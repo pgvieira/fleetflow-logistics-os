@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   validate:
-    name: Test, Build, and Audit
+    name: Test, Lint, Build, and Audit
     runs-on: ubuntu-latest
     env:
       HUSKY: 0
@@ -33,14 +33,22 @@ jobs:
         id: install
         run: npm ci
 
+      - name: Check TypeScript
+        if: ${{ steps.install.outcome == 'success' && !cancelled() }}
+        run: npm run typecheck
+
+      - name: Lint workspaces
+        if: ${{ steps.install.outcome == 'success' && !cancelled() }}
+        run: npm run lint
+
       - name: Run workspace tests
         if: ${{ steps.install.outcome == 'success' && !cancelled() }}
-        run: npm run test --workspaces --if-present -- --runInBand
+        run: npm test
 
       - name: Build workspaces
         if: ${{ steps.install.outcome == 'success' && !cancelled() }}
-        run: npm run build --workspaces --if-present
+        run: npm run build
 
       - name: Audit dependencies
         if: ${{ steps.install.outcome == 'success' && !cancelled() }}
-        run: npm audit --audit-level=low
+        run: npm run audit

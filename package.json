@@ -10,8 +10,15 @@
     "packages/*"
   ],
   "scripts": {
-    "run:api": "npm run dev --workspace @fleetflow/api",
-    "run:web": "npm run dev --workspace @fleetflow/web",
+    "dev:api": "npm run dev --workspace @fleetflow/api",
+    "dev:web": "npm run dev --workspace @fleetflow/web",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present -- --runInBand",
+    "build": "npm run build --workspaces --if-present",
+    "audit": "npm audit --audit-level=low",
+    "check:pre-push": "npm run typecheck && npm run lint && npm test",
+    "check": "npm run typecheck && npm run lint && npm test && npm run build && npm run audit",
     "prepare": "husky"
   },
   "devDependencies": {

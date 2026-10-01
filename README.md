@@ -10,35 +10,35 @@ Monorepo pessoal para os projetos de frontend e backend.
 ## Estrutura
 
 - `apps/api/`: API Node.js com Express e TypeScript.
-- `apps/`: futuras aplicações executáveis, como o frontend.
+- `apps/web/`: frontend React com Vite e TypeScript.
 - `packages/`: pacotes compartilhados entre aplicações.
 - `tsconfig.base.json`: opções comuns do TypeScript; cada projeto terá seu próprio `tsconfig.json` estendendo este arquivo.
 
-## API
+## Comandos da raiz
 
-Instale as dependências a partir da raiz do repositório:
+Todos os comandos abaixo devem ser executados na raiz:
+
+```bash
+npm run dev:api
+npm run dev:web
+npm run typecheck
+npm run lint
+npm test
+npm run build
+npm run audit
+npm run check:pre-push
+npm run check
+```
+
+`check:pre-push` executa typecheck, lint e testes; o hook do Husky roda esse comando antes de cada push. `check` também inclui build e audit. Os comandos de qualidade percorrem os workspaces que tenham o script correspondente; por enquanto, lint e testes estão configurados no frontend.
+
+Instale as dependências a partir da raiz:
 
 ```bash
 npm install
 ```
 
-Inicie a API em modo de desenvolvimento:
-
-```bash
-npm run dev --workspace @fleetflow/api
-```
-
-Os comandos `build`, `start` e `typecheck` também estão disponíveis no workspace `@fleetflow/api`.
-
-## Web
-
-Inicie o frontend em modo de desenvolvimento:
-
-```bash
-npm run dev --workspace @fleetflow/web
-```
-
-Os comandos `build`, `typecheck`, `lint`, `test` e `test:watch` estão disponíveis no workspace `@fleetflow/web`.
+Os comandos específicos de cada workspace também podem ser chamados diretamente com a opção `--workspace` do npm.
 
 ## Gerenciador de pacotes
 
