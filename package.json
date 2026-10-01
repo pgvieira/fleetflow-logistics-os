@@ -27,6 +27,8 @@
     "husky": "^9.1.7"
   },
   "allowScripts": {
-    "esbuild": true
+    "esbuild": true,
+    "@parcel/watcher": true,
+    "unrs-resolver": true
   }
 }

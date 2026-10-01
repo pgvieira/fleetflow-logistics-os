@@ -8,6 +8,11 @@ updates:
       time: "07:30"
       timezone: America/Sao_Paulo
     open-pull-requests-limit: 8
+    ignore:
+      - dependency-name: typescript
+        update-types:
+          - version-update:semver-minor
+          - version-update:semver-major
     groups:
       production-minor-and-patch:
         applies-to: version-updates
