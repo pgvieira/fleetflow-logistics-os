@@ -1,14 +1,29 @@
 # FleetFlow Logistics OS
 
-Monorepo pessoal para os futuros projetos de frontend e backend.
+Monorepo pessoal para os projetos de frontend e backend.
 
 ## Estrutura
 
-- `apps/`: aplicações executáveis, como frontend e API.
+- `apps/api/`: API Node.js com Express e TypeScript.
+- `apps/`: futuras aplicações executáveis, como o frontend.
 - `packages/`: pacotes compartilhados entre aplicações.
 - `tsconfig.base.json`: opções comuns do TypeScript; cada projeto terá seu próprio `tsconfig.json` estendendo este arquivo.
 
-Os diretórios de aplicação e pacote ainda não foram criados. O workspace está preparado para recebê-los quando os projetos começarem.
+## API
+
+Instale as dependências a partir da raiz do repositório:
+
+```bash
+npm install
+```
+
+Inicie a API em modo de desenvolvimento:
+
+```bash
+npm run dev --workspace @fleetflow/api
+```
+
+Os comandos `build`, `start` e `typecheck` também estão disponíveis no workspace `@fleetflow/api`.
 
 ## Gerenciador de pacotes
 
