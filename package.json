@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "run:api": "npm run dev --workspace @fleetflow/api",
+    "run:web": "npm run dev --workspace @fleetflow/web",
     "prepare": "husky"
   },
   "devDependencies": {

@@ -25,6 +25,16 @@ npm run dev --workspace @fleetflow/api
 
 Os comandos `build`, `start` e `typecheck` também estão disponíveis no workspace `@fleetflow/api`.
 
+## Web
+
+Inicie o frontend em modo de desenvolvimento:
+
+```bash
+npm run dev --workspace @fleetflow/web
+```
+
+Os comandos `build`, `typecheck`, `lint`, `test` e `test:watch` estão disponíveis no workspace `@fleetflow/web`.
+
 ## Gerenciador de pacotes
 
 Este repositório usa npm workspaces. Quando houver workspaces, execute os comandos npm a partir da raiz para manter um único lockfile (`package-lock.json`).
