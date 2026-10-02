@@ -16,19 +16,27 @@
     "lint": "npm run lint --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "audit": "npm audit --audit-level=low",
-    "check:pre-push": "npm run typecheck && npm run lint && npm test",
-    "check": "npm run typecheck && npm run lint && npm test && npm run build && npm run audit",
+    "check:pre-push": "npm run format:check && npm run typecheck && npm run lint && npm test",
+    "check": "npm run format:check && npm run typecheck && npm run lint && npm test && npm run build && npm run audit",
     "prepare": "husky"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.3",
     "@commitlint/config-conventional": "^21.2.3",
-    "husky": "^9.1.7"
+    "eslint-config-prettier": "10.1.8",
+    "husky": "^9.1.7",
+    "lint-staged": "17.6.0",
+    "prettier": "3.9.9"
   },
   "allowScripts": {
     "esbuild": true,
     "@parcel/watcher": true,
     "unrs-resolver": true
+  },
+  "lint-staged": {
+    "*.{js,mjs,cjs,ts,tsx,json,md,yml,yaml,css,html}": "prettier --write"
   }
 }
