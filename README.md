@@ -48,6 +48,12 @@ Os comandos específicos de cada workspace também podem ser chamados diretament
 
 Com a API em execução (`npm run dev:api`), a documentação interativa do Swagger UI fica disponível em `http://localhost:3000/api-docs`, e a especificação OpenAPI em JSON em `http://localhost:3000/api-docs.json`. A especificação é mantida em `apps/api/src/docs/openapi.ts` junto com os endpoints descritos.
 
+## Supabase
+
+Para conectar a API ao seu projeto Supabase, copie `apps/api/.env.example` para `apps/api/.env` e preencha `SUPABASE_URL` e `SUPABASE_PUBLISHABLE_KEY` com os valores do painel do Supabase. O cliente é criado sob demanda por `getSupabaseClient` em `apps/api/src/config/supabase.ts`, então a API e os testes que não acessam o banco podem iniciar sem essas variáveis. Ative Row Level Security (RLS) nas tabelas e crie políticas de acesso antes de expor operações de dados.
+
+Use a chave publishable neste primeiro setup. Chaves secret/service-role ignoram RLS e devem ficar reservadas para operações administrativas no backend, depois que a API tiver autorização própria. Nunca coloque uma chave secreta no frontend ou no Git.
+
 ## Gerenciador de pacotes
 
 Este repositório usa npm workspaces. Quando houver workspaces, execute os comandos npm a partir da raiz para manter um único lockfile (`package-lock.json`).
