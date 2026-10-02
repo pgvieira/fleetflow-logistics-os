@@ -25,12 +25,16 @@ npm run typecheck
 npm run lint
 npm test
 npm run build
+npm run format
+npm run format:check
 npm run audit
 npm run check:pre-push
 npm run check
 ```
 
-`check:pre-push` executa typecheck, lint e testes; o hook do Husky roda esse comando antes de cada push. `check` também inclui build e audit. Typecheck, lint, testes e build estão configurados nos workspaces da API e do frontend.
+`check:pre-push` verifica formatação, typecheck, lint e testes; o hook do Husky roda esse comando antes de cada push. `check` inclui essas validações, build e audit. Typecheck, lint, testes e build estão configurados nos workspaces da API e do frontend.
+
+O Prettier aplica a formatação comum do monorepo. `npm run format` formata os arquivos; `npm run format:check` apenas verifica. O hook `pre-commit` formata os arquivos adicionados ao commit usando lint-staged.
 
 Instale as dependências a partir da raiz:
 
