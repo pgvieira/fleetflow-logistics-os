@@ -44,6 +44,10 @@ npm install
 
 Os comandos específicos de cada workspace também podem ser chamados diretamente com a opção `--workspace` do npm.
 
+## Documentação da API
+
+Com a API em execução (`npm run dev:api`), a documentação interativa do Swagger UI fica disponível em `http://localhost:3000/api-docs`, e a especificação OpenAPI em JSON em `http://localhost:3000/api-docs.json`. A especificação é mantida em `apps/api/src/docs/openapi.ts` junto com os endpoints descritos.
+
 ## Gerenciador de pacotes
 
 Este repositório usa npm workspaces. Quando houver workspaces, execute os comandos npm a partir da raiz para manter um único lockfile (`package-lock.json`).
